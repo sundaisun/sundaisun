@@ -67,6 +67,7 @@ h4{
     color:$aluminum;
 }
 
+//首页百分百高度
 div#landing-wrapper{
     position:relative;
     height:100%;
@@ -79,6 +80,7 @@ div#landing-wrapper{
         top:auto;
         left:auto;
         display:flex;
+        flex-direction:column;
     }
 }
 
@@ -198,18 +200,11 @@ div.thegrid a h3{
     line-height:1em;
 	color: $steel;
     background: rgba($white-smoke,0.9);
-//    @include gradient-dark();
     font-size:1.8rem;
     letter-spacing: 0.02rem;
     @include transition(0.55s);
     @include ease-in-out(0.55s);
     @include threeD(0,-50%,0,0);
-//    &:after{
-//        content:'';
-//        display:block;
-//        opacity:0;
-//        margin-top:5%;
-//    }
 }
 
 div.thegrid > a div.grid-caption p{
@@ -258,12 +253,26 @@ div.thegrid:hover > #thumbnails a img{
     position:relative;
 }
 
-div.hero{
+div.hero, div.hero-bg{
     position:relative;
     width:100%;
     height:100%;
     min-height:600px;
     margin:auto;
+    .no-touch & {
+		@include perspective(4000px);
+	}
+
+	&::before {
+		/* never visible - this is used in jQuery to check the device type */
+		content: 'web';
+		display: none;
+	}
+
+	.touch &::before {
+		/* never visible - this is used in jQuery to check the device type */
+		content: 'mobile';
+	}
 img{
     position:absolute;
     left:0;
@@ -273,23 +282,26 @@ img{
 }
 }
 
-html#bubble div.hero{
+//案例研究header图片设置
+html#bubble div.hero-bg{
     background-color:#8dcfe9;
-//    background-image:url('http://sundaisun.com/staging/static/images/bubble/hero-bg.jpg');
     background-image: url('/static/images/bubble/hero-bg.jpg');
     background-size:cover;
     background-position:center;
-    img{
+    img:first-child{
         bottom:0px;
         left:5%;
+		}
+    img:last-child{
+        bottom:30px;
+        left:-45%;}
     }
-}
 
 //里页内容格式结束
 
-//响应式 small
-@media only screen and (max-width: 40em){ 
-    div.thegrid:hover a h3{
+//响应式 small 响应式 small 响应式 small
+@media only screen and (max-width: 40em){     
+div.thegrid:hover a h3{
 	color: $white;
     background: lighten($blue, 5%);
     font-size:1.6rem;
@@ -300,24 +312,33 @@ html#bubble div.hero{
 div.thegrid:hover a div.grid-caption::before,
 div.thegrid:hover > a div.grid-caption p{
 	opacity: 0;}
-
     
-div.hero{
+div.hero-bg{
      min-height:450px;
 }    
-    
-html#bubble div.hero img{
-        @include scale(0.8);
-        bottom:-12.5%;
-        left:-10%;
-}
+
+div#landing-wrapper section#wrapper{
+    height:auto !important;
 }
 
-//响应式 medium
+html#bubble div.hero-bg{
+    img:first-child{
+        @include scale(0.8);
+        bottom:-12.5%;
+        left:-15%;}
+    img:last-child{
+        display:none;
+    }
+}
+}
+//响应式 medium 响应式 medium 响应式 medium
 @media only screen and (min-width: 40.063em) {
 html,body{
     height:100%;
     min-height:100%;
 }
-    
+
+div#landing-wrapper section#wrapper{
+    height:auto !important;
+}
 }

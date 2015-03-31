@@ -1,3 +1,9 @@
+<!--
+xrange1: 70
+yrange1: 0
+invert1: true
+-->
+
 <!doctype html>
 <html id="bubble">
 <head>
@@ -37,7 +43,12 @@
 	
 
 <div class="hero">
-   <div class="hero-wrap row"><img src="/static/images/bubble/hero-part.png"></div>
+<!--   <div class="hero-wrap row">-->
+       <div class="hero-bg" id="hero-bg">
+           <img id="img01" src="/static/images/bubble/hero-part.png">
+           <img id="img02" src="/static/images/bubble/logo.png">
+       </div>
+<!--   </div>-->
 </div>
 
 	<section id="wrapper" class="post clearfix">
@@ -151,6 +162,13 @@ A simple one-page website that includes product information and contact form.
 		    <script>
       $(document).foundation();
             </script>
+<!--
+        <script src="/static/js/plax.js"></script>
+        <script>
+        $('#img01').plaxify({"xRange":,"yRange":,"invert":})
+        $.plax.enable()
+        </script>
+-->
 	
 </body>
 </html>

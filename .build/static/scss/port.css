@@ -87,7 +87,8 @@ div#landing-wrapper {
     height: 100vh;
     top: auto;
     left: auto;
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
 
 div#landing-wrapper section#intro {
   background: -moz-linear-gradient(top, rgba(168, 77, 149, 0.65) 0%, rgba(168, 77, 149, 0.75) 41%, rgba(168, 77, 149, 0.85) 68%, rgba(226, 62, 108, 0.87) 99%, rgba(226, 62, 108, 0.88) 100%);
@@ -245,27 +246,41 @@ div.thegrid:hover > #thumbnails a img {
 #wrapper {
   position: relative; }
 
-div.hero {
+div.hero, div.hero-bg {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 600px;
   margin: auto; }
-  div.hero img {
+  .no-touch div.hero, .no-touch div.hero-bg {
+    -webkit-perspective: 4000px;
+    -moz-perspective: 4000px;
+    perspective: 4000px; }
+  div.hero::before, div.hero-bg::before {
+    /* never visible - this is used in jQuery to check the device type */
+    content: 'web';
+    display: none; }
+  .touch div.hero::before, .touch div.hero-bg::before {
+    /* never visible - this is used in jQuery to check the device type */
+    content: 'mobile'; }
+  div.hero img, div.hero-bg img {
     position: absolute;
     left: 0;
     right: 0;
     max-width: 1100px;
     margin: 0 auto; }
 
-html#bubble div.hero {
+html#bubble div.hero-bg {
   background-color: #8dcfe9;
   background-image: url("/static/images/bubble/hero-bg.jpg");
   background-size: cover;
   background-position: center; }
-  html#bubble div.hero img {
+  html#bubble div.hero-bg img:first-child {
     bottom: 0px;
     left: 5%; }
+  html#bubble div.hero-bg img:last-child {
+    bottom: 30px;
+    left: -45%; }
 
 @media only screen and (max-width: 40em) {
   div.thegrid:hover a h3 {
@@ -280,19 +295,27 @@ html#bubble div.hero {
   div.thegrid:hover > a div.grid-caption p {
     opacity: 0; }
 
-  div.hero {
+  div.hero-bg {
     min-height: 450px; }
 
-  html#bubble div.hero img {
+  div#landing-wrapper section#wrapper {
+    height: auto !important; }
+
+  html#bubble div.hero-bg img:first-child {
     transform: scale(0.8);
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     bottom: -12.5%;
-    left: -10%; } }
+    left: -15%; }
+  html#bubble div.hero-bg img:last-child {
+    display: none; } }
 @media only screen and (min-width: 40.063em) {
   html, body {
     height: 100%;
-    min-height: 100%; } }
+    min-height: 100%; }
+
+  div#landing-wrapper section#wrapper {
+    height: auto !important; } }
 /* Overlay style */
 .overlay {
   position: fixed;

@@ -60,10 +60,22 @@
         -moz-transform:translateY($value);
 }
 
+@mixin translateZ($value){
+        transform: translateZ($value);
+        -webkit-transform:translateZ($value);
+        -moz-transform:translateZ($value);
+}
+
 @mixin scale($value){
         transform: scale($value);
         -webkit-transform:scale($value);
         -moz-transform:scale($value);
+}
+
+@mixin perspective($value){
+      -webkit-perspective: $value;
+      -moz-perspective: $value;
+      perspective: $value;
 }
 
 @mixin box-shadow($value){
@@ -74,6 +86,14 @@
 
 @mixin box-shadow-lr($value){
     box-shadow: inset $value 0 $value (-$value) darken($white-smoke,50%), inset (-$value) 0 $value (-$value) darken($white-smoke,50%);    
+}
+
+@mixin preserve3d(){
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 //DEFINE TRANSITION AND TRANSFORM STYLE
