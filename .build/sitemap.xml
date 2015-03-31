@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+    <url>
+        <loc>/index.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>/posts/bubble.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>/posts/digital-dine-in.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>/posts/mailchimp-ux.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>/posts/out-of-the-box.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="landing-wrapper">
+    <section id="intro">
+        testing testing
+    </section>
+	<section id="wrapper" class="row">
+<!--
+		<header id="header">
+			<h1>{% block title %}{{ block.super }}{% endblock title %}</h1>
+		</header>
+-->
+    <section id="thumbnails" class="clearfix">
+			{% for post in posts %}
+			<div class="thegrid small-12 large-6 columns">
+				<a href='/{{ post.path }}'>
+					<img src="{{ post.thumbnail }}"/>
+					<div class="grid-caption"><h3>{{ post.title }}</h3>
+					<p> {{ post.tags }}</p>
+					</div>
+				</a>
+            </div><!--thegrid-->
+			{% endfor %}
+    </section>
+	</section>
+
+		{% block footer %}
+			<footer id="footer">
+				<p class="small">Designed and developed by Sun Dai.</p>
+			</footer>
+		{% endblock footer %}
+		
+	<a href="http://cactusformac.com/?utm_source=templates&utm_medium=badge&utm_campaign=portfolio-template"><img id="badge" class="2x" src="{% static '/images/badge.png' %}"/></a>
+
+</div><!--landing wrapper-->
+{% endblock content %}

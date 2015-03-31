@@ -1,0 +1,323 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+}
+
+//边缘颜色
+html{
+    border-top:0.5em solid $fuchsia;
+    border-bottom:0.5em solid $purple;
+    min-height:100% !important;
+    height:auto !important;
+}
+
+html#bubble{
+    border:0.5em solid;
+    border-color:#8dcfe9;
+}
+
+html#mailchimp{
+    border:0.5em solid;
+    border-color:#febe12;
+}
+
+html#ootb{
+    border:0.5em solid;
+    border-color:#ff9d90;
+}
+
+html#mcd{
+    border:0.5em solid;
+    border-color:#00b0b6;
+}
+
+body{
+    font-family: $mainfont;
+    font-size:16px;
+    color:$oil;
+    letter-spacing:0.02rem;
+}
+
+.columns, .column{
+    padding:0;
+}
+
+h1{
+    font-family: $serif;
+    font-size:1.8rem;
+    color:$charcoal;
+}
+
+h2{
+    font-family: $serif;
+    font-size:1.6rem;
+    color:$charcoal;
+}
+
+h3{
+    font-family: 'mainR',sans-serif;
+    font-size:1.4rem;
+    color:$charcoal;
+}
+
+h4{
+    font-family: 'mainR',sans-serif;
+    font-weight: normal;
+    font-size:1.4rem;
+    color:$aluminum;
+}
+
+div#landing-wrapper{
+    position:relative;
+    height:100%;
+    min-height:100%;
+    section#intro, section#wrapper{
+        position:relative;
+//        min-height:100%;
+        height:100vh;
+//        height:100%;
+        top:auto;
+        left:auto;
+        display:flex;
+    }
+}
+
+div#landing-wrapper section#intro{
+    @include gradient();
+}
+
+//读取进度条
+//读取进度条结束
+
+//HEADER
+//NAV
+.overlay ul li a{
+    font-family: $mainfont;
+}
+
+//切换菜单按钮开始
+#toggle {
+  position:fixed;
+  right:10%;
+  top:5%;
+  display: block;
+  z-index: 99998;
+  width: 32px;
+  height: 32px;
+    &:hover{
+        cursor: pointer;
+    }
+  @include ease-in-out();
+}
+
+#toggle span:after,
+#toggle span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+
+#toggle span:after{
+  top: 9px;
+}
+
+#toggle span {
+  position: relative;
+  display: block;
+}
+
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+  width: 30px;
+  height: 4px;
+  background-color: $fuchsia;
+  @include ease-in-out(0.5s);
+  backface-visibility: hidden;
+}
+
+/* on activation */
+#toggle.on{
+    height:32px;
+    width:32px;
+    position:fixed;
+    right:10%;
+    top:5%;
+    display: block;
+    z-index: 10000;
+}
+
+#toggle.on span {
+  background-color: transparent;
+}
+
+#toggle.on span:before {
+  transform: rotate(-45deg) translate(-13px, 4px);
+  -webkit-transform: rotate(-45deg) translate(-13px, 4px);
+  background-color:$ghost !important;
+}
+
+#toggle.on span:after {
+  transform: rotate(45deg) translate(-8px, 0px);
+  -webkit-transform:rotate(45deg) translate(-8px, 0px);
+  background-color:$ghost !important;
+}
+//切换菜单按钮结束
+
+//首页图片
+div.thegrid{
+    padding:0.5rem;
+}
+
+//overlay style
+div.thegrid a div.grid-caption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+    bottom:0;
+    right:0;
+    margin:auto;
+	width: 93%;
+	height: 91%;
+//	@include gradient-dark();
+    background-color:rgba($white-smoke,0.95);
+	content: '';
+	opacity: 0;
+    @include transition(0.7s);
+}
+
+//post title style
+div.thegrid a h3{
+	position: absolute;
+    display:block;
+    font-family:$serif;
+    font-weight: normal;
+	bottom: 5%;
+	padding:15px 8%;
+    line-height:1em;
+	color: $steel;
+    background: rgba($white-smoke,0.9);
+//    @include gradient-dark();
+    font-size:1.8rem;
+    letter-spacing: 0.02rem;
+    @include transition(0.55s);
+    @include ease-in-out(0.55s);
+    @include threeD(0,-50%,0,0);
+//    &:after{
+//        content:'';
+//        display:block;
+//        opacity:0;
+//        margin-top:5%;
+//    }
+}
+
+div.thegrid > a div.grid-caption p{
+    color:$jumbo;
+    display:block;
+    height:auto;
+    width:92% !important;
+    position: absolute;
+	top: 5%;
+    left: 9%;
+    font-size:1rem;
+    font-family:'mainL', sans-serif;
+    @include transition(0.55s);
+    @include threeD(0,60%,0,0);
+    opacity:0;
+}
+
+
+div.thegrid:hover a h3{
+	color: $steel;
+    background:transparent;
+//    font-size:1.8rem;
+    @include threeD(0,-60%,0,-60px);
+//    &:after{
+//        content:'This is description.';
+//        opacity:1;
+//    }
+}
+
+div.thegrid:hover a div.grid-caption::before,
+div.thegrid:hover > a div.grid-caption p{
+	opacity: 1;
+	@include threeD(0,0,0,0);
+}
+
+div.thegrid:hover > a div.grid-caption p{
+    @include threeD(0,80%,0,80px);}
+
+div.thegrid:hover > #thumbnails a img{
+    @include blur(5px);
+}
+//首页图片样式结束
+
+//里页内容格式
+#wrapper{
+    position:relative;
+}
+
+div.hero{
+    position:relative;
+    width:100%;
+    height:100%;
+    min-height:600px;
+    margin:auto;
+img{
+    position:absolute;
+    left:0;
+    right:0;
+    max-width: 1100px;
+    margin:0 auto;
+}
+}
+
+html#bubble div.hero{
+    background-color:#8dcfe9;
+//    background-image:url('http://sundaisun.com/staging/static/images/bubble/hero-bg.jpg');
+    background-image: url('/static/images/bubble/hero-bg.jpg');
+    background-size:cover;
+    background-position:center;
+    img{
+        bottom:0px;
+        left:5%;
+    }
+}
+
+//里页内容格式结束
+
+//响应式 small
+@media only screen and (max-width: 40em){ 
+    div.thegrid:hover a h3{
+	color: $white;
+    background: lighten($blue, 5%);
+    font-size:1.6rem;
+    letter-spacing: 0.02rem;
+    @include threeD(0,-50%,0,0);
+}
+
+div.thegrid:hover a div.grid-caption::before,
+div.thegrid:hover > a div.grid-caption p{
+	opacity: 0;}
+
+    
+div.hero{
+     min-height:450px;
+}    
+    
+html#bubble div.hero img{
+        @include scale(0.8);
+        bottom:-12.5%;
+        left:-10%;
+}
+}
+
+//响应式 medium
+@media only screen and (min-width: 40.063em) {
+html,body{
+    height:100%;
+    min-height:100%;
+}
+    
+}

@@ -1,0 +1,57 @@
+title: Dine-In Digital Experience
+thumbnail: /static/images/mcd/mcd-1.jpg
+tags: User Experience, Interaction, Visual Design
+date: 30-10-2013
+pageid: mcd
+
+{% extends "post.html" %}
+{% block body %}
+{% filter markdown %}
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src="//player.vimeo.com/video/120917048?color=ff0179&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div id="post-meta">User Experience | Interaction | Visual Design</div>
+<h1>Project Goal</h1>
+To design a seamless and enjoyable dine-in experience at McDonald’s, reduce waiting time in queue, and to inform customers regarding health facts of food at McDonald’s.
+
+<h1>Challenges</h1>
+<ul>
+    <li>Too many options-they're slowing me down;</li>
+    <li>Cannot just get what I always get;</li>
+    <li>I want to switch food items.</li>
+    <li>Waiting is too boring.</li>
+</ul>
+<p></p>
+<h1>Idea sketches</h1>
+<img src="{% static '/images/mcd/mcd-3.jpg' %}">
+<br>
+<h1>Solutions</h1>
+
+<h4>Personalized menu.</h4>
+New menu is cleanly categorized and presented with "cards". When user interacts with the card, it expands, showing meal content, type and price. User may have the option to view his / her order history and most frequently ordered items.
+<img src="{% static '/images/mcd/mcd-2.jpg' %}">
+<h4>Customize your meal.</h4>
+Efficiency is key. The ordering app limits number of items you can swap in the customization section, so that people don't end up spending too much time deciding what to eat. Price is updated in real time so you are always informed.
+<img src="{% static '/images/mcd/mcd-4.jpg' %}">
+<h4>Easy Payment.</h4>
+No more standing in line. Simply pay within the app.
+<img src="{% static '/images/mcd/mcd-5.jpg' %}">
+<h4>Waiting is fun.</h4>
+The app tells you an estimated wait so you can coordinate your time better. Play a leisure game, or even order a song to play at the restaurant.
+<img src="{% static '/images/mcd/mcd-6.jpg' %}">
+<img src="{% static '/images/gif/mcd.gif' %}">
+<img src="{% static '/images/mcd/mcd-7.jpg' %}">
+
+<h1>Process</h1>
+<h4>Research</h4>
+<img src="{% static '/images/mcd/mcd-8.jpg' %}">
+<h4>Sketchs and lo-fi wireframes</h4>
+<img src="{% static '/images/mcd/mcd-9.jpg' %}">
+<h4>Lo-fi prototyping</h4>
+<img src="{% static '/images/gif/mcd-lofi.gif' %}">
+<h4>Visual hierachy</h4>
+<img src="{% static '/images/mcd/mcd-10.jpg' %}">
+<h4>Hi-fi prototyping</h4>
+<img src="{% static '/images/gif/mcd-hifi.gif' %}">
+
+
+{% endfilter %}
+{% endblock body %}
