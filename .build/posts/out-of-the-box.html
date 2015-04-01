@@ -37,12 +37,13 @@
 	
 
 <div class="hero">
-<!--   <div class="hero-wrap row">-->
+   <div class="hero-wrap">
        <div class="hero-bg" id="hero-bg">
-           <img id="img01" src="">
-           <img id="img02" src="">
+           <img id="img01" data-parallaxify-range-x="70" data-parallaxify-range-y="50" src="/static/images/ootb/hero-laptop.jpg">
+           <img id="img02" data-parallaxify-range-x="90" data-parallaxify-range-y="40" src="/static/images/ootb/hero-mobile.png">
+           <img id="img03" data-parallaxify-range-x="60" data-parallaxify-range-y="20" src="/static/images/ootb/hero-card.png">
        </div>
-<!--   </div>-->
+   </div>
 </div>
 
 	<section id="wrapper" class="post clearfix">
@@ -58,10 +59,6 @@
 		<article class="post">
 			<section class="post-body row">
 				
-<div class="post-hero row">
-<img class="featured" src="/static/images/ootb/thumb.jpg"/>
-</div>
-
 <div class="post-content row">
 <div id="post-meta">Web Design | Interaction | Visual Design</div>
 <h1>Overview</h1>
@@ -126,10 +123,6 @@ The application lets you quickly select screening location and time, then regist
 			<nav id="post-nav">
 				<span class="prev">
 				
-					<a href='/posts/digital-dine-in.html'>
-						<span class="arrow">&larr;</span> Dine-In Digital Experience
-					</a>
-				
 				</span>
 
 				<span class="next">
@@ -146,7 +139,7 @@ The application lets you quickly select screening location and time, then regist
 
 
 	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="/static/js/main.js"></script>
 		<script src="/static/js/modernizr.js"></script>
 		<script src="/static/js/classie.js"></script>
@@ -156,13 +149,35 @@ The application lets you quickly select screening location and time, then regist
 		    <script>
       $(document).foundation();
             </script>
-<!--
-        <script src="/static/js/plax.js"></script>
-        <script>
-        $('#img01').plaxify({"xRange":,"yRange":,"invert":})
-        $.plax.enable()
-        </script>
--->
+        <script src="/static/js/parallaxify.js"></script>
+        
+<script>
+$(function(){
+			$(document).ready(function() {
+				$.parallaxify({
+					positionProperty: 'transform',
+					responsive: true,
+					motionType: 'natural',
+					mouseMotionType: 'gaussian',
+					motionAngleX: 80,
+					motionAngleY: 70,
+					alphaFilter: 0.9,
+					adjustBasePosition: true,
+					alphaPosition: 0.025,
+				});
+//					$('#hero-bg').hover(
+//                    function(){
+//                        $(this).parallaxify({
+//                            parallaxBackgrounds:true
+//                        });
+//                    }
+//                    );
+			});
+		});
+    
+    
+
+</script>
 	
 </body>
 </html>

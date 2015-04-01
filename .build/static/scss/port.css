@@ -246,41 +246,61 @@ div.thegrid:hover > #thumbnails a img {
 #wrapper {
   position: relative; }
 
-div.hero, div.hero-bg {
+div.hero, div.hero-wrap {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 600px;
   margin: auto; }
-  .no-touch div.hero, .no-touch div.hero-bg {
-    -webkit-perspective: 4000px;
-    -moz-perspective: 4000px;
-    perspective: 4000px; }
-  div.hero::before, div.hero-bg::before {
-    /* never visible - this is used in jQuery to check the device type */
-    content: 'web';
-    display: none; }
-  .touch div.hero::before, .touch div.hero-bg::before {
-    /* never visible - this is used in jQuery to check the device type */
-    content: 'mobile'; }
-  div.hero img, div.hero-bg img {
+  div.hero div.hero-bg, div.hero-wrap div.hero-bg {
     position: absolute;
     left: 0;
     right: 0;
-    max-width: 1100px;
-    margin: 0 auto; }
+    top: 0;
+    bottom: 0; }
+    div.hero div.hero-bg img, div.hero-wrap div.hero-bg img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      max-width: 1100px;
+      margin: 0 auto; }
 
 html#bubble div.hero-bg {
   background-color: #8dcfe9;
   background-image: url("/static/images/bubble/hero-bg.jpg");
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  background-repeat: no-repeat; }
   html#bubble div.hero-bg img:first-child {
     bottom: 0px;
     left: 5%; }
-  html#bubble div.hero-bg img:last-child {
+  html#bubble div.hero-bg img:nth-child(2) {
     bottom: 30px;
     left: -45%; }
+
+html#ootb div.hero-bg {
+  background-color: #ff9d90; }
+  html#ootb div.hero-bg img:first-child {
+    bottom: 100px;
+    left: 0; }
+  html#ootb div.hero-bg img:nth-child(2) {
+    bottom: 100px;
+    left: 40%; }
+  html#ootb div.hero-bg img:nth-child(3) {
+    bottom: 95px;
+    left: -35%; }
+
+html#mcd div.hero-bg {
+  background-color: #00b0b6; }
+  html#mcd div.hero-bg img:first-child {
+    bottom: 100px;
+    left: 0; }
+  html#mcd div.hero-bg img:nth-child(2) {
+    bottom: 190px;
+    left: -1%; }
+  html#mcd div.hero-bg img:nth-child(3) {
+    bottom: 210px;
+    left: -360px; }
 
 @media only screen and (max-width: 40em) {
   div.thegrid:hover a h3 {
@@ -302,13 +322,15 @@ html#bubble div.hero-bg {
     height: auto !important; }
 
   html#bubble div.hero-bg img:first-child {
-    transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -moz-transform: scale(0.8);
-    bottom: -12.5%;
+    width: 90%;
     left: -15%; }
-  html#bubble div.hero-bg img:last-child {
-    display: none; } }
+  html#bubble div.hero-bg img:nth-child(2) {
+    top: 15%;
+    left: 5%; }
+
+  html#mcd div.hero-bg img:first-child {
+    bottom: 100px;
+    left: -50px; } }
 @media only screen and (min-width: 40.063em) {
   html, body {
     height: 100%;

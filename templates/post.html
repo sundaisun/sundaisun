@@ -3,12 +3,13 @@
 {% block content %}
 
 <div class="hero">
-<!--   <div class="hero-wrap row">-->
+   <div class="hero-wrap">
        <div class="hero-bg" id="hero-bg">
-           <img id="img01" src="{{ hero1 }}">
-           <img id="img02" src="{{ hero2 }}">
+           <img id="img01" data-parallaxify-range-x="{{xrange1}}" data-parallaxify-range-y="{{yrange1}}" src="{{ hero1 }}">
+           <img id="img02" data-parallaxify-range-x="{{xrange2}}" data-parallaxify-range-y="{{yrange2}}" src="{{ hero2 }}">
+           <img id="img03" data-parallaxify-range-x="{{xrange3}}" data-parallaxify-range-y="{{yrange3}}" src="{{ hero3 }}">
        </div>
-<!--   </div>-->
+   </div>
 </div>
 
 	<section id="wrapper" class="post clearfix">

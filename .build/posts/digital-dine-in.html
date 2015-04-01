@@ -37,12 +37,13 @@
 	
 
 <div class="hero">
-<!--   <div class="hero-wrap row">-->
+   <div class="hero-wrap">
        <div class="hero-bg" id="hero-bg">
-           <img id="img01" src="">
-           <img id="img02" src="">
+           <img id="img01" data-parallaxify-range-x="70" data-parallaxify-range-y="50" src="/static/images/mcd/hero-btm.png">
+           <img id="img02" data-parallaxify-range-x="90" data-parallaxify-range-y="40" src="/static/images/mcd/hero-mid.png">
+           <img id="img03" data-parallaxify-range-x="60" data-parallaxify-range-y="20" src="/static/images/mcd/hero-top.png">
        </div>
-<!--   </div>-->
+   </div>
 </div>
 
 	<section id="wrapper" class="post clearfix">
@@ -133,7 +134,7 @@
 		</article>
 
 		<footer id="post-meta" class="clearfix">
-			<div class="date">Oct 30</div>
+			<div class="date">Nov 30</div>
 			
 				<div><span>Tags</span> User Experience, Interaction, Visual Design </div>
 			
@@ -143,13 +144,13 @@
 			<nav id="post-nav">
 				<span class="prev">
 				
+					<a href='/posts/bubble.html'>
+						<span class="arrow">&larr;</span> Bubble
+					</a>
+				
 				</span>
 
 				<span class="next">
-					
-						<a href='/posts/out-of-the-box.html'>
-							Out of the Box <span class="arrow">&rarr;</span>
-						</a>
 					
 				</span>
 			</nav>
@@ -159,7 +160,7 @@
 
 
 	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="/static/js/main.js"></script>
 		<script src="/static/js/modernizr.js"></script>
 		<script src="/static/js/classie.js"></script>
@@ -169,13 +170,35 @@
 		    <script>
       $(document).foundation();
             </script>
-<!--
-        <script src="/static/js/plax.js"></script>
-        <script>
-        $('#img01').plaxify({"xRange":,"yRange":,"invert":})
-        $.plax.enable()
-        </script>
--->
+        <script src="/static/js/parallaxify.js"></script>
+        
+<script>
+$(function(){
+			$(document).ready(function() {
+				$.parallaxify({
+					positionProperty: 'transform',
+					responsive: true,
+					motionType: 'natural',
+					mouseMotionType: 'gaussian',
+					motionAngleX: 80,
+					motionAngleY: 70,
+					alphaFilter: 0.9,
+					adjustBasePosition: true,
+					alphaPosition: 0.025,
+				});
+//					$('#hero-bg').hover(
+//                    function(){
+//                        $(this).parallaxify({
+//                            parallaxBackgrounds:true
+//                        });
+//                    }
+//                    );
+			});
+		});
+    
+    
+
+</script>
 	
 </body>
 </html>

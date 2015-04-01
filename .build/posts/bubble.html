@@ -1,9 +1,3 @@
-<!--
-xrange1: 70
-yrange1: 0
-invert1: true
--->
-
 <!doctype html>
 <html id="bubble">
 <head>
@@ -43,12 +37,13 @@ invert1: true
 	
 
 <div class="hero">
-<!--   <div class="hero-wrap row">-->
+   <div class="hero-wrap">
        <div class="hero-bg" id="hero-bg">
-           <img id="img01" src="/static/images/bubble/hero-part.png">
-           <img id="img02" src="/static/images/bubble/logo.png">
+           <img id="img01" data-parallaxify-range-x="70" data-parallaxify-range-y="0" src="/static/images/bubble/hero-part.png">
+           <img id="img02" data-parallaxify-range-x="80" data-parallaxify-range-y="40" src="/static/images/bubble/logo.png">
+           <img id="img03" data-parallaxify-range-x="" data-parallaxify-range-y="" src="">
        </div>
-<!--   </div>-->
+   </div>
 </div>
 
 	<section id="wrapper" class="post clearfix">
@@ -144,6 +139,10 @@ A simple one-page website that includes product information and contact form.
 
 				<span class="next">
 					
+						<a href='/posts/digital-dine-in.html'>
+							Dine-In Digital Experience <span class="arrow">&rarr;</span>
+						</a>
+					
 				</span>
 			</nav>
 		</footer>
@@ -152,7 +151,7 @@ A simple one-page website that includes product information and contact form.
 
 
 	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="/static/js/main.js"></script>
 		<script src="/static/js/modernizr.js"></script>
 		<script src="/static/js/classie.js"></script>
@@ -162,13 +161,35 @@ A simple one-page website that includes product information and contact form.
 		    <script>
       $(document).foundation();
             </script>
-<!--
-        <script src="/static/js/plax.js"></script>
-        <script>
-        $('#img01').plaxify({"xRange":,"yRange":,"invert":})
-        $.plax.enable()
-        </script>
--->
+        <script src="/static/js/parallaxify.js"></script>
+        
+<script>
+$(function(){
+			$(document).ready(function() {
+				$.parallaxify({
+					positionProperty: 'transform',
+					responsive: true,
+					motionType: 'natural',
+					mouseMotionType: 'gaussian',
+					motionAngleX: 80,
+					motionAngleY: 70,
+					alphaFilter: 0.9,
+					adjustBasePosition: true,
+					alphaPosition: 0.025,
+				});
+//					$('#hero-bg').hover(
+//                    function(){
+//                        $(this).parallaxify({
+//                            parallaxBackgrounds:true
+//                        });
+//                    }
+//                    );
+			});
+		});
+    
+    
+
+</script>
 	
 </body>
 </html>

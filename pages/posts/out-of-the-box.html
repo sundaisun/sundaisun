@@ -3,14 +3,20 @@ thumbnail: /static/images/ootb/thumb.jpg
 tags: Web Design, Interaction, Visual Design
 date: 1-03-2014
 pageid: ootb
+hero1: /static/images/ootb/hero-laptop.jpg
+hero2: /static/images/ootb/hero-mobile.png
+hero3: /static/images/ootb/hero-card.png
+xrange1: 70
+yrange1: 50
+xrange2:90
+yrange2:40
+xrange3: 60
+yrange3:20
 
 {% extends "post.html" %}
 {% block body %}
 {% filter markdown %}
 
-<div class="post-hero row">
-<img class="featured" src="{% static '/images/ootb/thumb.jpg' %}"/>
-</div>
 <div class="post-content row">
 <div id="post-meta">Web Design | Interaction | Visual Design</div>
 <h1>Overview</h1>

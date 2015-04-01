@@ -48,6 +48,15 @@
     <section id="thumbnails" class="clearfix">
 			
 			<div class="thegrid small-12 large-6 columns">
+				<a href='/posts/digital-dine-in.html'>
+					<img src="/static/images/mcd/mcd-1.jpg"/>
+					<div class="grid-caption"><h3>Dine-In Digital Experience</h3>
+					<p> User Experience, Interaction, Visual Design</p>
+					</div>
+				</a>
+            </div><!--thegrid-->
+			
+			<div class="thegrid small-12 large-6 columns">
 				<a href='/posts/bubble.html'>
 					<img src="/static/images/bubble/thumb.jpg"/>
 					<div class="grid-caption"><h3>Bubble</h3>
@@ -74,15 +83,6 @@
 				</a>
             </div><!--thegrid-->
 			
-			<div class="thegrid small-12 large-6 columns">
-				<a href='/posts/digital-dine-in.html'>
-					<img src="/static/images/mcd/mcd-1.jpg"/>
-					<div class="grid-caption"><h3>Dine-In Digital Experience</h3>
-					<p> User Experience, Interaction, Visual Design</p>
-					</div>
-				</a>
-            </div><!--thegrid-->
-			
     </section>
 	</section>
 
@@ -98,7 +98,7 @@
 
 
 	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="/static/js/main.js"></script>
 		<script src="/static/js/modernizr.js"></script>
 		<script src="/static/js/classie.js"></script>
@@ -108,13 +108,35 @@
 		    <script>
       $(document).foundation();
             </script>
-<!--
-        <script src="/static/js/plax.js"></script>
-        <script>
-        $('#img01').plaxify({"xRange":,"yRange":,"invert":})
-        $.plax.enable()
-        </script>
--->
+        <script src="/static/js/parallaxify.js"></script>
+        
+<script>
+$(function(){
+			$(document).ready(function() {
+				$.parallaxify({
+					positionProperty: 'transform',
+					responsive: true,
+					motionType: 'natural',
+					mouseMotionType: 'gaussian',
+					motionAngleX: 80,
+					motionAngleY: 70,
+					alphaFilter: 0.9,
+					adjustBasePosition: true,
+					alphaPosition: 0.025,
+				});
+//					$('#hero-bg').hover(
+//                    function(){
+//                        $(this).parallaxify({
+//                            parallaxBackgrounds:true
+//                        });
+//                    }
+//                    );
+			});
+		});
+    
+    
+
+</script>
 	
 </body>
 </html>
