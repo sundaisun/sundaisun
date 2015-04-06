@@ -1,0 +1,325 @@
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+
+//.more-wrapper {
+//  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+//  width: 90%;
+//  max-width: 1200px;
+//  margin: 0 auto;
+//}
+//.more-wrapper::after {
+//  /* clearfix */
+//  content: '';
+//  display: table;
+//  clear: both;
+//}
+
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+main {
+  position: relative;
+  z-index: 2;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+main.slide-out {
+  /* the main element slides to the left when the author bio is visible */
+  -webkit-transform: translateX(-270px);
+  -moz-transform: translateX(-270px);
+  -ms-transform: translateX(-270px);
+  -o-transform: translateX(-270px);
+  transform: translateX(-270px);
+}
+
+@media only screen and (min-width: 768px) {
+  main.slide-out {
+    /* change in size of the author bio section */
+    -webkit-transform: translateX(-600px);
+    -moz-transform: translateX(-600px);
+    -ms-transform: translateX(-600px);
+    -o-transform: translateX(-600px);
+    transform: translateX(-600px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.slide-out {
+    -webkit-transform: translateX(-800px);
+    -moz-transform: translateX(-800px);
+    -ms-transform: translateX(-800px);
+    -o-transform: translateX(-800px);
+    transform: translateX(-800px);
+  }
+}
+
+.more {
+  padding: 2em 0;
+  text-align: center;
+}
+//.more .more-wrapper {
+//  /* this modifies the .more-wrapper default max-width */
+//  max-width: 768px;
+//}
+
+
+@media only screen and (min-width: 768px) {
+  .more {
+    padding: 2em;
+  }
+  .more p {
+    line-height: 1.6;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .more {
+    padding: 6em;
+  }
+    
+  .more p {
+    line-height: 1.8;
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+
+#more {
+  background: $oil;
+}
+
+//#more .more-wrapper {
+//  max-width: 1200px;
+//}
+
+
+#more li {
+  margin-bottom: 2em;
+  border-radius: 0.25em;
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0);
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.no-touch #more li:hover {
+  box-shadow: 0 0 10px rgba(92, 75, 81, 0.3);
+}
+
+#more figure {
+  position: relative;
+}
+#more img {
+  display: block;
+  width: 100%;
+  border-radius: .25em .25em 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  #more li {
+    width: 31%;
+    float: left;
+    margin-right: 3.5%;
+  }
+  #more li:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+
+.more-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 270px;
+  height: 100%;
+  overflow-y: auto;
+  /* smooth scrolling on mobile phones and tablets */
+  -webkit-overflow-scrolling: touch;
+  background: $oil;
+  z-index: 1;
+  /* this how we move the author bio section off the canvas */
+  -webkit-transform: translateX(270px);
+  -moz-transform: translateX(270px);
+  -ms-transform: translateX(270px);
+  -o-transform: translateX(270px);
+  transform: translateX(270px);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.more-content.slide-in {
+  /* the author bio section slides in when the user clicks on the team member picture */
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+
+
+.more-content img {
+  width: 100%;
+  display: block;
+}
+
+.more-content .more-content-inner {
+  padding: 1em;
+  padding-top:3em;
+  color: $ghost;
+}
+
+@media only screen and (min-width: 768px) {
+  .more-content {
+    width: 600px;
+    -webkit-transform: translateX(600px);
+    -moz-transform: translateX(600px);
+    -ms-transform: translateX(600px);
+    -o-transform: translateX(600px);
+    transform: translateX(600px);
+  }
+  .more-content .more-content-inner {
+    padding: 2em;
+    padding-top:3em;
+  }
+  .more-content .more-content-inner p {
+    line-height: 1.6;
+    margin: 2em 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .more-content {
+    width: 800px;
+    -webkit-transform: translateX(800px);
+    -moz-transform: translateX(800px);
+    -ms-transform: translateX(800px);
+    -o-transform: translateX(800px);
+    transform: translateX(800px);
+  }
+  .more-content .more-content-inner {
+    padding: 4em;
+    padding-top:8em;
+    /* we move the content up so the title is over the color gradient */
+    -webkit-transform: translateY(-80px);
+    -moz-transform: translateY(-80px);
+    -ms-transform: translateY(-80px);
+    -o-transform: translateY(-80px);
+    transform: translateY(-80px);
+  }
+
+  .no-cssgradients .more-content .more-content-inner {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.more-content-close {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background:$fuchsia;
+  text-indent: 100%;
+  white-space: nowrap;
+  z-index: 3;
+  display: none;
+}
+.more-content-close.is-visible {
+  display: block;
+  -webkit-animation: cd-move-in 0.8s;
+  -moz-animation: cd-move-in 0.8s;
+  animation: cd-move-in 0.8s;
+}
+@media only screen and (min-width: 1200px) {
+  .more-content-close {
+    right: 20px;
+    top: 20px;
+  }
+}
+
+
+/* -------------------------------- 
+
+xkeyframes 
+
+-------------------------------- */
+@-webkit-keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes cd-move-in {
+  0% {
+    -webkit-transform: translateX(100px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes cd-move-in {
+  0% {
+    -moz-transform: translateX(100px);
+  }
+
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@keyframes cd-move-in {
+  0% {
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}

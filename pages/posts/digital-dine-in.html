@@ -10,16 +10,17 @@ xrange1: 70
 yrange1: 50
 xrange2:90
 yrange2:40
-xrange3: 60
+xrange3: 90
 yrange3:20
 
 {% extends "post.html" %}
 {% block body %}
 {% filter markdown %}
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src="//player.vimeo.com/video/120917048?color=ff0179&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div class="post-content row">
 <div id="post-meta">User Experience | Interaction | Visual Design</div>
 <h1>Project Goal</h1>
-To design a seamless and enjoyable dine-in experience at McDonald’s, reduce waiting time in queue, and to inform customers regarding health facts of food at McDonald’s.
+<p>To design a seamless and enjoyable dine-in experience at McDonald’s, reduce waiting time in queue, and to inform customers regarding health facts of food at McDonald’s.</p>
 
 <h1>Challenges</h1>
 <ul>
@@ -35,16 +36,16 @@ To design a seamless and enjoyable dine-in experience at McDonald’s, reduce wa
 <h1>Solutions</h1>
 
 <h4>Personalized menu.</h4>
-New menu is cleanly categorized and presented with "cards". When user interacts with the card, it expands, showing meal content, type and price. User may have the option to view his / her order history and most frequently ordered items.
+<p>New menu is cleanly categorized and presented with "cards". When user interacts with the card, it expands, showing meal content, type and price. User may have the option to view his / her order history and most frequently ordered items.</p>
 <img src="{% static '/images/mcd/mcd-2.jpg' %}">
 <h4>Customize your meal.</h4>
-Efficiency is key. The ordering app limits number of items you can swap in the customization section, so that people don't end up spending too much time deciding what to eat. Price is updated in real time so you are always informed.
+<p>Efficiency is key. The ordering app limits number of items you can swap in the customization section, so that people don't end up spending too much time deciding what to eat. Price is updated in real time so you are always informed.</p>
 <img src="{% static '/images/mcd/mcd-4.jpg' %}">
 <h4>Easy Payment.</h4>
-No more standing in line. Simply pay within the app.
+<p>No more standing in line. Simply pay within the app.</p>
 <img src="{% static '/images/mcd/mcd-5.jpg' %}">
 <h4>Waiting is fun.</h4>
-The app tells you an estimated wait so you can coordinate your time better. Play a leisure game, or even order a song to play at the restaurant.
+<p>The app tells you an estimated wait so you can coordinate your time better. Play a leisure game, or even order a song to play at the restaurant.</p>
 <img src="{% static '/images/mcd/mcd-6.jpg' %}">
 <img src="{% static '/images/gif/mcd.gif' %}">
 <img src="{% static '/images/mcd/mcd-7.jpg' %}">
@@ -60,7 +61,7 @@ The app tells you an estimated wait so you can coordinate your time better. Play
 <img src="{% static '/images/mcd/mcd-10.jpg' %}">
 <h4>Hi-fi prototyping</h4>
 <img src="{% static '/images/gif/mcd-hifi.gif' %}">
-
+</div>
 
 {% endfilter %}
 {% endblock body %}

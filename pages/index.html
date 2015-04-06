@@ -1,18 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
+<div id="skrollr-body">
 <div id="landing-wrapper">
     <section id="intro">
-        testing testing
+       <div id="logo-wrapper">
+            <div id="logo"
+                data-0="width:10%; position:absolute; top:0px; opacity:1;"
+                data-600="width:3%; position:fixed; top:-55%; opacity:0;"
+            ></div>
+            <div class="logo-text"
+            data-0="top:12%; opacity:1;"
+            data-600="top:0; opacity:0;"
+            >Sun Dai<br>Interaction &amp; Web Designer</div>
+            <ul class="header-menu"
+            data-0="bottom:20%; top:auto;"
+            data-600="bottom:40%; top:auto;"
+               >
+                <a href="#wrapper"><li>Work</li></a>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Contact</li></a>
+            </ul>
+       </div>
+<!--
+       <video autoplay loop poster="polina.jpg" id="bgvid" muted>
+        <source src="{% static '/video/Longdistancevalentine.webm' %}" type="video/webm">
+        <source src="{% static '/video/Longdistancevalentine.mp4' %}" type="video/mp4">
+        </video>
+-->
     </section>
 	<section id="wrapper" class="row">
-<!--
-		<header id="header">
-			<h1>{% block title %}{{ block.super }}{% endblock title %}</h1>
-		</header>
--->
     <section id="thumbnails" class="clearfix">
 			{% for post in posts %}
-			<div class="thegrid small-12 large-6 columns">
+			<div class="thegrid small-12 medium-6 columns">
 				<a href='/{{ post.path }}'>
 					<img src="{{ post.thumbnail }}"/>
 					<div class="grid-caption"><h3>{{ post.title }}</h3>
@@ -33,4 +52,10 @@
 	<a href="http://cactusformac.com/?utm_source=templates&utm_medium=badge&utm_campaign=portfolio-template"><img id="badge" class="2x" src="{% static '/images/badge.png' %}"/></a>
 
 </div><!--landing wrapper-->
+</div>
+<!--skrollr body-->
+<script src="{% static '/js/skrollr.js' %}"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
 {% endblock content %}

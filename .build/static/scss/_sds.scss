@@ -12,24 +12,16 @@ html{
 }
 
 html#bubble{
-    border:0.5em solid;
-    border-color:#8dcfe9;
-}
+    @include html-border(0.5em, #8dcfe9);}
 
 html#mailchimp{
-    border:0.5em solid;
-    border-color:#febe12;
-}
+    @include html-border(0.5em, #febe12);}
 
 html#ootb{
-    border:0.5em solid;
-    border-color:#ff9d90;
-}
+    @include html-border(0.5em, #ff9d90);}
 
 html#mcd{
-    border:0.5em solid;
-    border-color:#00b0b6;
-}
+    @include html-border(0.5em, #00b0b6);}
 
 body{
     font-family: $mainfont;
@@ -46,6 +38,8 @@ h1{
     font-family: $serif;
     font-size:1.8rem;
     color:$charcoal;
+    line-height:2rem;
+    margin-bottom:20px;
 }
 
 h2{
@@ -64,7 +58,7 @@ h4{
     font-family: 'mainR',sans-serif;
     font-weight: normal;
     font-size:1.4rem;
-    color:$aluminum;
+    color:$jet;
 }
 
 //首页百分百高度
@@ -74,9 +68,8 @@ div#landing-wrapper{
     min-height:100%;
     section#intro, section#wrapper{
         position:relative;
-//        min-height:100%;
         height:100vh;
-//        height:100%;
+        min-height:730px;
         top:auto;
         left:auto;
         display:flex;
@@ -86,6 +79,82 @@ div#landing-wrapper{
 
 div#landing-wrapper section#intro{
     @include gradient();
+    background-size:cover;
+    background-position:center;
+}
+
+div#logo-wrapper{
+    position:relative;
+    height:730px;
+    text-align: center;
+    #logo{
+    width:10%;
+    height:auto;
+    animation-timing-function: ease;
+    @include absolute-center();
+    z-index:9997;
+    svg{
+        margin-bottom:20px;
+        margin-top:-30px;
+            }        
+        }
+    .logo-text{
+    @include absolute-center();
+    top:12%;
+    text-transform: uppercase;
+    color:$ghost;
+    font-family: 'mainB';
+    &:nth-child(2){
+        top:auto;
+        bottom:35%;
+        font-size:1.2rem;
+        }
+    }    
+    ul.header-menu{
+        @include absolute-center();
+        bottom:20%;
+        top:auto;
+        font-size:1rem;
+        display:block;
+        font-family:'nexa_boldregular';
+        a {
+            color:$ghost;
+             margin-right:30px;
+            &:last-child{
+                margin-right:0;
+            }
+            li{
+            display:inline-block;
+            border: 1px white solid;
+            text-align: center;
+            list-style: none;
+            padding-top:0.8rem;
+            padding-bottom:0.8rem;
+            padding-left:1rem;
+            padding-right:1rem;
+            @include ease-in-out(0.3s);
+            &:hover{
+                color:$fuchsia;
+                background-color:rgba($ghost,0.9);
+                    }
+            }
+    }
+}
+}
+//LANDING INTRO PAGE END
+
+
+//BG VIDEO
+video#bgvid {
+position: absolute; 
+right: 0; bottom: 0;
+min-width: 100%; 
+min-height: 100%;
+width: auto; 
+height: 100vh;
+z-index: -100;
+background: url(polina.jpg) no-repeat;
+background-size: cover;
 }
 
 //读取进度条
@@ -101,16 +170,17 @@ div#landing-wrapper section#intro{
 #toggle {
   position:fixed;
   right:10%;
-  top:5%;
+  top:0;
   display: block;
   z-index: 99998;
   width: 32px;
-  height: 32px;
+  height: 50px;
     &:hover{
         cursor: pointer;
     }
   @include ease-in-out();
 }
+
 
 #toggle span:after,
 #toggle span:before {
@@ -145,7 +215,7 @@ div#landing-wrapper section#intro{
     width:32px;
     position:fixed;
     right:10%;
-    top:5%;
+    top:0;
     display: block;
     z-index: 10000;
 }
@@ -166,12 +236,40 @@ div#landing-wrapper section#intro{
   background-color:$ghost !important;
 }
 //切换菜单按钮结束
+//LOGO-COLORED
+
+a div#logo-colored{
+      position:fixed;
+      background-image:url('/static/images/logo.png');
+      left:51px;
+      background-size:cover;
+      top:4px;
+      display: block;
+      z-index: 9996;
+      width: 28px;
+      height: 45px;
+      opacity:0;
+        &:hover{
+            cursor: pointer;
+        }
+      @include ease-in-out();
+}
+
+div#nav-overlay{
+    position:fixed;
+    z-index:9995;
+    width:50px;
+    height:55px;
+    top:0;
+    left:40px;
+    opacity:0;
+    background-color:$fuchsia;
+}
 
 //首页图片
 div.thegrid{
     padding:0.5rem;
 }
-
 //overlay style
 div.thegrid a div.grid-caption::before {
 	position: absolute;
@@ -222,16 +320,10 @@ div.thegrid > a div.grid-caption p{
     opacity:0;
 }
 
-
 div.thegrid:hover a h3{
 	color: $steel;
     background:transparent;
-//    font-size:1.8rem;
     @include threeD(0,-60%,0,-60px);
-//    &:after{
-//        content:'This is description.';
-//        opacity:1;
-//    }
 }
 
 div.thegrid:hover a div.grid-caption::before,
@@ -324,31 +416,208 @@ html#mcd div.hero-bg{
     }
 }
 
-
-//里页内容格式结束
-
-//响应式 small 响应式 small 响应式 small
-@media only screen and (max-width: 40em){     
-div.thegrid:hover a h3{
-	color: $white;
-    background: lighten($blue, 5%);
-    font-size:1.6rem;
-    letter-spacing: 0.02rem;
-    @include threeD(0,-50%,0,0);
+//POST CONTENT ROW
+div.post-content div.row{
+    h1,h2,h3,h4,h5{
+        text-align: center;
+    }
+    h4{
+        margin-bottom:10px;
+    }
 }
 
+
+img.nogaptop, div.nogaptop, img.nogapboth, div.nogapboth{
+    margin-top:0;
+}
+
+img.nogapbtm, div.nogapbtm, img.nogapboth, div.nogapboth{
+    margin-bottom:0;
+}
+
+div.row p span{
+    padding-top:20px;
+    a{
+        @include ease-in(0.2s);
+        &:hover{
+            color:darken($fuchsia,15%);
+        }
+    }
+}
+
+//div.gif{
+//    width:100%;
+//    margin:0 auto;
+//    text-align: center;
+//    background-color:#8dcfe9;
+//    img{
+//    max-width:700px;
+//}
+//}
+
+#footer{
+    margin-top:20px;
+}
+
+//STRATEGIES
+div.badge{
+    display:inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top:20px;
+    color:$monsoon;
+    i{
+        font-size:3rem;
+        margin-bottom:20px;
+    }
+    h5{
+        color:$monsoon;
+        font-family: "mainR";
+    }
+}
+
+.dark-bg{
+    width:100% !important;
+    background-color:$silver;
+    padding-top:50px;
+    text-align: center;
+    margin-bottom:50px;
+}
+
+//里页内容格式结束
+//案例研究more设置
+
+//more的overlay图层
+.more-content{
+    z-index:99999;
+    i, h4{
+        color:$fuchsia;
+        display:inline-block;
+    }
+    i{
+        font-size:2.5rem;
+        padding-right:20px;
+        padding-top:10px;
+    }
+}
+
+.more-content-close{
+    z-index:100000;
+    width:70px;
+    text-transform: uppercase;
+    color:$fuchsia;
+    background:transparent;
+    text-indent:inherit;
+    font-size:1rem;
+    font-family: 'nexa_boldregular';
+    &:hover{
+        color:$ghost;
+    }
+}
+
+//more在正文中的样式
+#more{
+    background:transparent;
+    margin-top:40px;
+    padding:0;
+    padding-bottom:40px;
+    a{
+        outline:0;
+        button{
+            font-family:'mainL';
+            background-color:transparent;
+            outline:0;
+            padding-top:13px;
+            padding-bottom:15px;
+            border:1px solid $fuchsia;
+            @include ease-in-out(0.3s);
+            color:$fuchsia;
+            &:hover{
+                background-color:$fuchsia;
+                color:white;
+            }
+        }
+    }
+}
+
+//a regular button style
+.button-wrapper{
+    text-align: center;
+}
+
+
+//响应式 small 响应式 small 响应式 small
+@media only screen and (max-width: 40em){
+    
+div#logo-wrapper{
+    height:450px;
+    #logo{
+    width:22% !important;
+    svg{
+        margin-top:30px;;
+    }
+    }
+    #logo-text{
+        @include absolute-center();
+        top:18%;
+}
+}
+    
+div.thegrid:hover a h3{
+	color: $white;
+    font-size:1.7rem;
+    letter-spacing: 0.02rem;
+    text-shadow:1px 1px 8px rgba($jet, 0.8);
+    @include threeD(0,-50%,0,0);
+}
+    
 div.thegrid:hover a div.grid-caption::before,
 div.thegrid:hover > a div.grid-caption p{
 	opacity: 0;}
     
-div.hero-bg{
+div.hero, div.hero-wrap{
      min-height:450px;
-}    
-
+     overflow-x:hidden;
+}
+    
+div.thegrid{
+    padding:0;
+}
+    
 div#landing-wrapper section#wrapper{
     height:auto !important;
+    padding:0;
 }
 
+div#landing-wrapper section#intro{
+    min-height:450px;
+}
+
+section#wrapper{
+    padding-top:20px;
+//    padding-left:30px;
+//    padding-right:30px;
+}
+      
+//post content small size style    
+div.post-content div.row{
+    font-size:0.8rem;
+    padding-left:30px;
+    padding-right:30px;
+    line-height:1rem;
+    h1{
+        font-size:1.2rem;
+        margin-bottom:1.2rem;
+        margin-top:1.2rem;
+    }
+    h4{
+        font-size:1rem;
+        margin-top:1rem;
+        margin-bottom:1rem;
+    }
+}
+    
+    
 html#bubble div.hero-bg{
     img:first-child{
         width:90%;
@@ -361,16 +630,47 @@ html#bubble div.hero-bg{
 
 html#mcd div.hero-bg{
     img:first-child{
-        bottom:100px;
+        bottom:30px;
         left:-50px;
 		}
+    img:nth-child(2){
+        bottom:120px;
+        left:-10px;
+    }
+    img:nth-child(3){
+        bottom:150px;
+        left:-380px;
+    }
+}
+    
+    
+html#ootb div.hero-bg{
+    img:first-child{
+        bottom:70px;
+		}
+    img:nth-child(2){
+        bottom:70px;
+    }
+    img:nth-child(3){
+        bottom:65px;
+    }
+}    
+
+//SMALL更多叠加内容的排版设置
+.more-content {
+    h4{
+    margin-bottom:1rem;
+    font-size:1rem;
+}
+    p{
+        font-size:0.8rem;
+    }
 }
     
 }
 
-
 //响应式 medium 响应式 medium 响应式 medium
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 40.063em) and (max-width: 64em){
 html,body{
     height:100%;
     min-height:100%;
@@ -379,4 +679,35 @@ html,body{
 div#landing-wrapper section#wrapper{
     height:auto !important;
 }
+    
+//post title style
+div.thegrid a h3{
+    font-size:1.3rem;
+}
+
+div.thegrid > a div.grid-caption p{
+    font-size:0.7rem;
+    width:85% !important;
+}
+
+div.thegrid:hover > a div.grid-caption p{
+    @include threeD(0,30%,0,30px);
+}
+
+div.thegrid:hover a h3{
+    @include threeD(0,-40%,0,-40px);
+}
+    
+.more-content{
+    i, h4{
+       padding-bottom:1.5rem;
+    }
+    h4{
+        font-size:1.1rem;
+    }
+    p{
+        font-size:0.9rem;
+    }
+}
+    
 }

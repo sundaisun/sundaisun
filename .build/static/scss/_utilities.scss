@@ -2,13 +2,18 @@
 //gradient overlay mixins
 @mixin gradient(){
     background: -moz-linear-gradient(top, rgba($purple, 0.65) 0%, rgba($purple,0.75) 41%, rgba($purple,0.85) 68%, rgba($fuchsia,0.87) 99%, rgba($fuchsia,0.88) 100%);
+//        , url('/static/images/mailchimp/01.jpg');
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($purple,0.65)), color-stop(41%,rgba($purple,0.75)), color-stop(68%,rgba($purple,0.85)), color-stop(99%,rgba($fuchsia,0.87)), color-stop(100%,rgba($fuchsia,0.88)));
+//        , url('/static/images/mailchimp/01.jpg');
     background: -webkit-linear-gradient(top,  rgba($purple,0.65) 0%,rgba($purple,0.75) 41%,rgba($purple,0.85) 68%,rgba($fuchsia,0.87) 99%,rgba($fuchsia,0.88) 100%);
+//        , url('/static/images/mailchimp/01.jpg');
     background: -o-linear-gradient(top,  rgba($purple,0.65) 0%,rgba($purple,0.75) 41%,rgba($purple,0.85) 68%,rgba($fuchsia,0.87) 99%,rgba($fuchsia,0.88) 100%);
+//        , url('/static/images/mailchimp/01.jpg');
     background: -ms-linear-gradient(top,  rgba($purple,0.65) 0%,rgba($purple,0.75) 41%,rgba($purple,0.85) 68%,rgba($fuchsia,0.87) 99%,rgba($fuchsia,0.88) 100%);
+//        , url('/static/images/mailchimp/01.jpg');
     background: linear-gradient(to bottom,  rgba($purple,0.65) 0%,rgba($purple,0.75) 41%,rgba($purple,0.85) 68%,rgba($fuchsia,0.87) 99%,rgba($fuchsia,0.88) 100%);
+//        , url('/static/images/mailchimp/01.jpg');
 }
-
 
 @mixin gradient-dark(){
   background: -webkit-linear-gradient(rgba(#4CB8C4, 0.65) 10%, rgba(#3CD3AD,0.75) 90%); /* Chrome 10+, Saf5.1+ */
@@ -154,3 +159,15 @@
        background:darken($color,10%);
     }
 }
+
+@mixin html-border($width:0.5em, $color:$fuchsia){
+    border:$width solid $color;
+}
+
+//parent wrapper use relative position, with declared height
+@mixin absolute-center(){
+    position:absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin:auto;
+}
+

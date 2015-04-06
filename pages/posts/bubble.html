@@ -8,67 +8,116 @@ hero2: /static/images/bubble/logo.png
 xrange1: 70
 yrange1: 0
 xrange2:80
-yrange2:40
+yrange2:90
 <!--invert1: true-->
 
 {% extends "post.html" %}
 {% block body %}
 {% filter markdown %}
 
-<div class="post-content row">
+<div class="post-content">
+<div class="row">
 <div id="post-meta">Product Design | User Experience | Visual Design</div>
+</div>
+<div class="row">
 <h1>Overview</h1>
-Bubble is a mobile app that utilizes virtual reality in order for people from
+<p>Bubble is a mobile app that utilizes virtual reality in order for people from
 different parts of the world to share “A day in the life” panoramic
 pictures, so others can look at the world from a different perspective,
 and celebrate diversity.
+</p>
+</div>
 
+<div class="row">
 <h1>Problem</h1>
-
-We live in a world with enormous diversity: there are many different
+<p>We live in a world with enormous diversity: there are many different
 perspectives and ways of thinking. Rather than being perceived as
-making us richer and stronger, differences or diversity are all too often causes of
-tension and problems.
+making us richer and stronger, differences or diversity are all too often causes of tension and problems.</p>
+</div>
+<section id="more" class="more">
+    <div class="more-wrapper">
+        <a href="#0" data-type="more-content-1"><button>Research, Persona &amp; IA</button></a>
+    </div>
+</section>
+<img class="nogaptop" src="{% static '/images/bubble/02.png' %}">
 
-<img src="{% static '/images/bubble/02.png' %}">
-
+<div class="dark-bg">
 <h1>Strategies</h1>
-
-<h4>Start young.</h4>
-Tweens and teens are beginning to develop their own identity and worldview. These future peace leaders are the target audience of Bubble.
-<h4>Do it yourself.</h4>
-With the help of Google Cardboard, Bubble could be easily adopted and used by schools due to the Cardboard's simple, fun and inexpensive nature.
-<h4>Virtual reality.</h4>
-Bubble lets you look at the world from a different perspective using 360-degree panoramic images through the lenses of Google Cardboard, listen to sound and voices from the other side of the world.
-
-<img src="{% static '/images/gif/bubble.gif' %}">
-
+<div class="badge-row row">
+    <div class="badge small-12 medium-4 columns">
+        <i class="fa fa-child"></i>
+        <h5>Start young</h5>
+    </div>
+    <div class="badge small-12 medium-4 columns">
+        <i class="fa fa-building-o"></i>
+        <h5>Do it yourself</h5>
+    </div>
+    <div class="badge small-12 medium-4 columns">
+        <i class="fa fa-eye"></i>
+        <h5>Virtual reality</h5>
+    </div>
+</div><!--badge-row-->
+<section id="more" class="more">
+    <div class="more-wrapper">
+        <a href="#0" data-type="more-content-2"><button>Learn More</button></a>
+    </div>
+</section>
+</div>
+<!--full width-->
+<div class="row">
 <h1>Deliverables</h1>
-<h4>Art Direction</h4>
-Clean, pastel colors attract the younger generation, and are easy on the eyes, given the consideration of how close eyes are to the screen when watching through Google Cardboard. Logos and icons use circular frames and rounded corners to resonate with the word "bubble". 
-<img src="{% static '/images/bubble/03.jpg' %}">
+<h4>Identity</h4>
+<p>Logos and icons use circular frames and rounded corners to resonate with the word "bubble". </p>
+</div>
+<img class="nogapboth" src="{% static '/images/bubble/identity.png' %}">
+<section id="more" class="more">
+    <div class="more-wrapper">
+        <a href="#0" data-type="more-content-3"><button>Color Palette</button></a>
+    </div>
+</section>
 
+<div class="row">
 <h4>Mobile App</h4>
-The app is designed into 2 modes: "Create" and "Explore". "Create" mode lets you take spherical panoramic photos, record annotation and upload them. 
+
+<p>The app is designed into 2 modes: "Create" and "Explore". "Create" mode lets you take spherical panoramic photos, record annotation and upload them. </p>
 <img src="{% static '/images/bubble/04.jpg' %}">
-"Explore" mode is activated automatically when a Cardboard is detected. From here you can view posts and listen to annotations from the first-person point of view. <br>Note: this mockup only has one screen for presentation purposes.
-<img src="{% static '/images/gif/bubble-2.gif' %}">
 
+<p>"Explore" mode is activated automatically when a Cardboard is detected. From here you can view posts and listen to annotations from the first-person point of view.</p>
+<img src="{% static '/images/gif/bubble.gif' %}">
+<p>Note: This mockup is not using split screen for presentation purposes.</p>
+<img class="nogaptop" src="{% static '/images/gif/bubble-2.gif' %}">
+
+</div>
+<!--row-->
+<div class="row">
 <h4>Website</h4>
-A simple one-page website that includes product information and contact form.
-<a href="http://www.sundaisun.com/bubble/index.html" target="_blank">View Website</a>
-<!--<img src="{% static '/images/bubble/05.jpg' %}">-->
-<img src="{% static '/images/bubble/06.jpg' %}">
+<p>A simple one-page website that includes product information and contact form.</p>
+<div id="more" class="button-wrapper">
+<a href="http://www.sundaisun.com/bubble/index.html" target="_blank"><button>View Website</button></a>
+</div>
+</div>
+<img class="nogaptop" src="{% static '/images/bubble/06.jpg' %}">
 
+<div class="row">
 <h1>Process</h1>
-<h4>Research</h4>
-<img src="{% static '/images/bubble/07.jpg' %}">
+</div>
+<div class="row">
 <h4>From sketches to mockup</h4>
-<img src="{% static '/images/bubble/08.jpg' %}">
-<img src="{% static '/images/bubble/09.jpg' %}">
-<h4>Iteration</h4>
-<img src="{% static '/images/bubble/10.jpg' %}">
-<h4>Prototyping</h4>
+</div>
+<img class="nogapboth" src="{% static '/images/bubble/08.jpg' %}">
+<img class="nogapboth" src="{% static '/images/bubble/09.jpg' %}">
+<section id="more" class="more">
+    <div class="more-wrapper">
+        <a href="#0" data-type="more-content-4"><button>Iteration Sketches</button></a>
+    </div>
+</section>
+<div class="row">
+<h4>Prototypes</h4>
+<p>Each mode went through 3 rounds of prototyping process: 2 rounds of paper and 1 round of mockup. Try them out here:<br>
+<span>
+<a href="https://popapp.in/w/projects/542ee6c7c78e393a1c79171d/preview" target="_blank">Create Paper</a> | <a href="https://popapp.in/w/projects/5430ac73c78e393a1c7926c6/preview" target="_blank">Create Mockup</a> | <a href="https://popapp.in/w/projects/542f09fa0de992651ba069a5/preview" target="_blank">Explore Paper</a> | <a href="https://popapp.in/w/projects/544472dc2a46de671346d6ba/preview" target="_blank">Explore Mockup</a>
+</span></p>
+</div>
 <img src="{% static '/images/gif/bubble-3.gif' %}">
 </div>
 
@@ -76,3 +125,44 @@ A simple one-page website that includes product information and contact form.
 {% endfilter %}
 {% endblock body %}
 
+
+{% block more %}
+<div class="more-content more-content-1">
+<div class="more-content-inner">
+<h4>Research</h4>
+<img src="{% static '/images/bubble/research.jpg' %}" alt="research">
+<h4>Persona &amp; IA Map</h4>
+<img src="{% static '/images/bubble/persona.jpg' %}" alt="research">
+</div>
+</div>
+
+
+<div class="more-content more-content-2">
+<div class="more-content-inner">
+<i class="fa fa-child"></i>
+<h4>Start young.</h4>
+<p>Tweens and teens are beginning to develop their own identity and worldview. These future peace leaders are the target audience of Bubble.</p>
+<i class="fa fa-building-o"></i>
+<h4>Do it yourself.</h4>
+<p>With the help of Google Cardboard, Bubble could be easily adopted and used by schools due to the Cardboard's simple, fun and inexpensive nature.</p>
+<i class="fa fa-eye"></i>
+<h4>Virtual reality.</h4>
+<p>Bubble lets you look at the world from a different perspective using 360-degree panoramic images through the lenses of Google Cardboard, listen to sound and voices from the other side of the world.</p>
+</div>
+</div>
+
+<div class="more-content more-content-3">
+<div class="more-content-inner">
+<p>Clean, pastel colors attract the younger generation, and are easy on the eyes, given the consideration of how close eyes are to the screen when watching through Google Cardboard.</p>
+<img src="{% static '/images/bubble/color.png' %}" alt="color">
+</div>
+</div>
+
+<div class="more-content more-content-4">
+<div class="more-content-inner">
+<img src="{% static '/images/bubble/10.jpg' %}" alt="sketches">
+</div>
+</div>
+<a href="#0" class="more-content-close">Close</a> <!-- close the author bio section -->
+
+{% endblock more %}
