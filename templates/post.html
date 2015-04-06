@@ -42,16 +42,18 @@
 			<nav id="post-nav">
 				<span class="prev small-6 columns">
 				{% if prevPost %}
+				<span class="nav-bg" style="background-image:url({{ prevPost.thumbnail }})"></span>
 					<a href='/{{ prevPost.path }}'>
-						<span class="arrow">&larr;</span> {{ prevPost.title }}
+                {{ prevPost.title }}
 					</a>
 				{% endif %}
 				</span>
 
 				<span class="next small-6 columns">
 					{% if nextPost %}
+					<span class="nav-bg" style="background-image:url({{ nextPost.thumbnail }})"></span>
 						<a href='/{{ nextPost.path }}'>
-							{{ nextPost.title }} <span class="arrow">&rarr;</span>
+							{{ nextPost.title }}
 						</a>
 					{% endif %}
 				</span>
